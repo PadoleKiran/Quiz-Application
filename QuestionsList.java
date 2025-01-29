@@ -7,13 +7,17 @@ public class QuestionsList {
     };
 
     
-    // public static void addnewquestion() {
-    //     String[][] newQuestionsArray = new String[questions.length + 1][];
+    public static void addNewQuestion(String[] newQuestion) {
+        String[][] newQuestionsArray = new String[questions.length + 1][];
         
-    //     for(int i=0; i<questions.length; i++){
-    //         newQuestionsArray[i] = questions[i];
-    //     }
-    // }
+        for(int i=0; i<questions.length; i++){
+            newQuestionsArray[i] = questions[i];
+        }
+
+        newQuestionsArray[questions.length] = newQuestion;
+
+        questions = newQuestionsArray;
+    }
 
     public static String[][] getQuestions() {
         return questions;
