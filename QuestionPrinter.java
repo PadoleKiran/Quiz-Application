@@ -13,6 +13,7 @@ public class QuestionPrinter extends QuestionsList{
             
             String[] question = questions[i];
 
+            System.out.println("--------------------------------------------------------------------------------");
             // question number
             System.out.println("Question Number: " + question[0]);
             // quection
@@ -24,10 +25,12 @@ public class QuestionPrinter extends QuestionsList{
             System.out.println("3. " + question[4]);
             System.out.println("4. " + question[5]);
 
+            System.out.println("--------------------------------------------------------------------------------");
             // Ask answer
             System.out.print("Enter your answer (1/2/3/4): ");
             int userAnswerIndex = scanner.nextInt();
 
+            System.out.println("--------------------------------------------------------------------------------");
             
             // Check if the answer is correct
             String correctAnswer = question[6];
@@ -41,27 +44,28 @@ public class QuestionPrinter extends QuestionsList{
             }
 
             totalquestions++;
-            System.out.println(); // Add a blank line between questions
+            System.out.println(); // blank line between questions
         }
 
-        double percent = ((double)correctanswercount/totalquestions) * 100;
+        double percent = (((double)correctanswercount/totalquestions) * 100);
         System.out.println("Number of questions : " + totalquestions); 
         System.out.println("Correct answers : " + correctanswercount); 
         System.out.println("You got percent : " + percent); 
 
-        if (percent <= 0 || percent >= 30 ) {
+        if (percent >= 0.0 && percent <= 30.0 ) {
             System.out.println("You must study harder.");
         }
-        else if (percent <= 31 || percent >= 60 ) {
+        else if (percent >= 31.0 && percent <= 60.0 ) {
             System.out.println("You are studying good.");
         }
-        else if (percent <= 61 || percent >= 90 ) {
+        else if (percent >= 61.0 && percent <= 90.0 ) {
             System.out.println("You are becoming toper and just bit of effords little required.");
         }
-        else if (percent <= 91 || percent >= 100 ) {
+        else if (percent >= 91.0 && percent <= 100.0 ) {
             System.out.println("You are very good at concepts and being into top list.");
         }
-        scanner.close();
+        System.out.println("--------------------------------------------------------------------------------");
+        // scanner.close();
     }
 
     

@@ -10,6 +10,7 @@ public class AddQuestion extends QuestionPrinter {
     static void addQuestion() { 
     Scanner scanner = new Scanner(System.in);
 
+        System.out.println("--------------------------------------------------------------------------------");
         System.out.print("Enter Your quesstion : ");
         String question = scanner.nextLine();
 
@@ -28,12 +29,15 @@ public class AddQuestion extends QuestionPrinter {
         System.out.print("Enter correct option : ");
         String correctOption = scanner.nextLine();
 
-        QuestionsList.addNewQuestion(new String[]{"4", question, option1, option2, option3, option4, correctOption});
+        String count =String.valueOf(questionCount + 1); 
+        System.out.println("--------------------------------------------------------------------------------");
+
+        QuestionsList.addNewQuestion(new String[]{count, question, option1, option2, option3, option4, correctOption});
         
         // Printing all questions
         // for (String[] q : getQuestions()) {
         //     System.out.println(q[1]); // Print question text
         // }
-        scanner.close();
+        // scanner.close();
     }
 }
